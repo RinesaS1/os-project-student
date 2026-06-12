@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App";
 
 import { AuthContextProvider } from "@context/AuthContext/AuthContextProvider";
+import { ThemeContextProvider } from "@context/ThemeContext/ThemeContextProvider";
 import { WindowContextProvider } from "@context/WindowContext/WindowContextProvider";
 
 import "./styles/index.css";
@@ -17,11 +18,13 @@ createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthContextProvider>
-        <WindowContextProvider>
-          <App />
-        </WindowContextProvider>
+        <ThemeContextProvider>
+          <WindowContextProvider>
+            <App />
+          </WindowContextProvider>
+        </ThemeContextProvider>
       </AuthContextProvider>
       <ReactQueryDevtools />
     </QueryClientProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
