@@ -9,7 +9,7 @@ function App() {
   const { isAuthenticated } = useAuthContext();
 
   return (
-    <div className="w-full flex bg-gradient-to-b h-screen from-primary to-secondary">
+    <div className="w-full flex bg-gradient-to-b h-screen from-primary to-secondary dark:from-slate-900 dark:to-slate-950">
       {!isAuthenticated ? <Login /> : <MainScreen />}
 
       <PowerButton />
